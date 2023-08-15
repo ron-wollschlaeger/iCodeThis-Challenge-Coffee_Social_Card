@@ -1,0 +1,227 @@
+:root {
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-gray: hsl(240, 1%, 83%);
+    --clr-dark-gray: hsl(240, 2%, 19%);
+    --clr-highlight: hsl(1, 85%, 57%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.5;
+    background-color: var(--clr-dark-gray);
+    background-image: linear-gradient(0deg, var(--clr-light-gray) 0%, var(--clr-dark-gray) 100%);
+    color: var(--clr-light-gray);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1470115209269-18dd2d7285cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(.6) grayscale(100%) brightness(.75);
+    z-index: -1;
+}
+
+.social-card {
+    width: 720px;
+    background-color: var(--clr-white);
+    border-radius: .25rem;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.social-card__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 320px;
+    color: var(--clr-white);
+    line-height: 1.2;
+}
+
+.social-card__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(https://www.deathwishcoffee.com/cdn/shop/articles/Colombian-Blog.jpg?v=1674147691);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    filter: contrast(.5) saturate(.5) brightness(.75);
+    z-index: -1;
+}
+
+.ribbon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+
+.ribbon span {
+    position: absolute;
+    width: 325px;
+    padding: 5px 0;
+    background-color: var(--clr-highlight);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.ribbon-top-right {
+    top: 35px;
+    right: -100px;
+}
+
+.ribbon-top-right span {
+    top: 15px;
+    right: 15px;
+    transform: rotate(45deg);
+}
+
+h1 {
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.8);
+}
+
+.social-card__header > p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.8);
+}
+
+.social-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.social-card__info {
+    border-right: 1px solid var(--clr-light-gray);
+    border-bottom: 1px solid var(--clr-light-gray);
+    border-left: 1px solid var(--clr-light-gray);
+    border-radius: 0 0 .25rem .25rem;
+}
+
+.social-card__info__header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.social-card__info__header > a > button {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    padding: 1.5rem 1.5rem;
+    border-width: 1px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: var(--clr-highlight);
+    border-radius: .25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--clr-highlight);
+    font-size: 1.2rem;
+}
+
+.social-card__info__header > a > button:hover {
+    color: var(--clr-white);
+    background-color: var(--clr-highlight);
+    cursor: pointer;
+}
+
+.social-card__info__header > img {
+    width: 200px;
+    height: auto;
+    margin-top: -100px;
+}
+
+.social-card__info__stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--clr-dark-gray);
+    margin-block: 1rem 2rem;
+}
+
+.social-card__info__stats > p {
+    display: block;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.social-card__info__stats > p > span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.social-card__address {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.social-card__address > a {
+    display: inline-flex;
+    gap: .25rem;
+    color: var(--clr-dark-gray);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-card__address > a:hover {
+    color: var(--clr-highlight);
+    cursor: pointer;
+}
+
+.btn-buy {
+    width: 100%;
+    height: 175px;
+    background-color: var(--clr-highlight);
+    border: none;
+    color: var(--clr-white);
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: font-size .1s, background-color .2s;
+}
+
+.btn-buy:hover {
+    cursor: pointer;
+    background-color: var(--clr-dark-gray);
+    font-size: 3rem;
+}
